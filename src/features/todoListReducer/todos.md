@@ -4,8 +4,8 @@
       - [x]: basic btn clickable => blue and light blue + text center
 
 ## todo - [Priority: 5]
-    - [ ]: style btn
-      - [ ]: hover btn
+    - [x]: style btn
+      - [x]: hover btn
     - [ ]: click unsave / change updateTodoToggle state
     - [ ]: Bug input update
 
