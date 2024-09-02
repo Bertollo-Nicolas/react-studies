@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from '../ui/button/Button';
 
 interface TodoProps {
     id: string,
     title: string,
     editTitle: string
-    updateTodoToggle: boolean,
+    editMode: boolean,
+    setEditMode: (editMode: boolean) => void
     setEditTitle: (title: string) => void,
-    handleSave: (id: string) => void,
+    handleSave: (id: string, title: string) => void,
     handleDelete: (id: string) => void,
     handleEditTitle: (title: string) => void
 }
 
-const Todo: React.FC<TodoProps> = ({ updateTodoToggle, id, title, editTitle, setEditTitle, handleSave,  handleEditTitle, handleDelete}) => {
+const Todo: React.FC<TodoProps> = ({ id, title, handleSave, handleDelete, setEditMode, editMode }) => {
+
+    const [editTitle, setEditTitle] = useState<string>('')
+    
+    const handleEditTitle = ( title: string ) => {
+        setEditMode(!editMode)
+        setEditTitle(title)
+    }
 
     return (
         <div className="todo h-11 bg-white rounded-lg flex items-center justify-between p-4 mb-2">
@@ -21,26 +30,23 @@ const Todo: React.FC<TodoProps> = ({ updateTodoToggle, id, title, editTitle, set
                 </div>
                 <p className="capitalize font-medium ml-4">
                     {
-                        (updateTodoToggle) ? 
+                        (editMode) ? 
                             <input className="update-input" type='text' value={editTitle} onChange={e => setEditTitle(e.target.value)}/>
                         :
                             title
                     }
                 </p>
             </div>
-            <div className="block">
+            <div className="flex">
                 {
-                    (updateTodoToggle) ?
-                        <button onClick={() => 
-                        handleSave(id)
-                        }>
-                            Save
-                        </button>
+                    (editMode) ?
+                        <Button onClick={() => handleSave(id, editTitle)} className='h-6 px-4'><span>save</span></Button>
                     :
-                        <button onClick={() => handleEditTitle(title)}>Update</button>
+                        <Button onClick={() => handleEditTitle(title)} className='h-6 px-4'><span>Update</span></Button>
                 }
                 
-                <button onClick={() => handleDelete(id)}>Delete</button>
+                <Button onClick={() => handleDelete(id)} className='h-6 px-4 ml-2'><span>Delete</span></Button>
+                
             </div>
         </div>
     );
