@@ -1,7 +1,7 @@
 ## Global component - [Priority: 5]
-    - [ ]: btn component
-      - [ ]: style create new things => + text ?shortcut
-      - [ ]: basic btn clickable => blue and light blue + text center
+    - [x]: btn component
+      - [x]: style create new things => + text ?shortcut
+      - [x]: basic btn clickable => blue and light blue + text center
 
 ## todo - [Priority: 5]
     - [ ]: style btn
