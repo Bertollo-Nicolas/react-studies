@@ -1,18 +1,18 @@
-import React, { useEffect, useReducer, useState } from 'react';
-import { todosReducer } from '../../reducers/todosReducer';
-import { initializeTodos } from '../../utils/storageUtils';
+import React, { useState } from 'react';
 import { TaskPanelState } from '../../interfaces/interfaces';
 import Todo from './Todo';
 import { Button } from '../ui/button/Button';
 import ButtonContentCreate from '../ui/button/ButtonContentCreate';
+import { useTodos } from '../../hooks/useTodos';
+
 
 const TodoList: React.FC = () => {
 
     const [isTaskPanelOpen, setIsTaskPanelOpen] = useState<TaskPanelState["isTaskPanelOpen"]>(false);
 
     const [todo, setTodo] = useState('')
-    const [todos, dispatch] = useReducer(todosReducer, initializeTodos());
-    const [editMode, setEditMode] = useState(false);
+    const { state, dispatch } = useTodos();
+    const todosToDisplay = state.isFiltered ? state.filteredTodos : state.todos;
 
     const handleAddTodo = () => {
         if (todo.trim()) {
@@ -25,39 +25,22 @@ const TodoList: React.FC = () => {
         dispatch({ type: 'DELETE_TODO', payload: id})
     }
 
-    const handleSave = ( id: string, title: string ) => {
-        dispatch({ type: 'UPDATE_TODO', payload: {id: id, title: title }})
-        setEditMode(!editMode)
+    const handleSave = ( id: string, title: string, status: boolean ) => {
+        dispatch({ type: 'UPDATE_TODO', payload: {id: id, title: title, status: status }})
     }
-
-    useEffect(() => {
-        try {
-            const storedTodos = window.localStorage.getItem('todos');
-            if (storedTodos) {
-                dispatch({ type: 'INIT_TODOS', payload: JSON.parse(storedTodos) });
-            }
-        } catch (error) {
-            console.error("Failed to load todos from localStorage:", error);
-        }
-    }, []);
-
-    useEffect(() => {
-        window.localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos]);
 
     return (
        <div>
             <div className="todo-list mt-6">
                 {
-                    todos.todos.map((item) => 
+                    todosToDisplay.map((item) => 
                         <Todo
                             id={item.id}
                             key={item.id}
                             title={item.title}
                             handleSave={handleSave}
                             handleDelete={handleDeleteTodo}
-                            setEditMode={setEditMode}
-                            editMode={editMode}
+                            status={item.status}
                         />
                     )
                 }
