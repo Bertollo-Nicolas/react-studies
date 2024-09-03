@@ -14,6 +14,7 @@
     - [x]: create reducer Filter
     - [x]: create context
     - [x]: bug filter state reset
+    - [ ]: test
   
 ## Create a list - [Priority: 4]
     - [ ]: component List
