@@ -44,7 +44,7 @@ const TodoList: React.FC = () => {
                         />
                     )
                 }
-                <div className="button-add-todo-content mb-5 absolute bottom-0 w-2/4">
+                <div className="button-add-todo-content mb-5 absolute bottom-5 w-2/6">
                     {
                         (isTaskPanelOpen) &&
                         <div className="input-add-todo-content bg-gray-800 text-white">
@@ -58,7 +58,7 @@ const TodoList: React.FC = () => {
                             <button onClick={handleAddTodo}>Save</button>
                         </div>
                     }
-                    <Button variant='black' className='' onClick={() => setIsTaskPanelOpen(prevState => !prevState)}>
+                    <Button variant='black' className='h-12' onClick={() => setIsTaskPanelOpen(prevState => !prevState)}>
                         <ButtonContentCreate label="Create new task" shortcut='N' variant='black' />
                     </Button>
                 </div>

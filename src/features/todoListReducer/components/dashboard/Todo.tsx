@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../ui/button/Button';
+import Checkbox from '../ui/checkbox/Checkbox';
 
 interface TodoProps {
     id: string,
@@ -28,12 +29,8 @@ const Todo: React.FC<TodoProps> = ({ id, title, handleSave, handleDelete, status
     return (
         <div className="todo h-11 bg-white rounded-lg flex items-center justify-between p-4 mb-2">
             <div className="todo-left flex items-center">
-                <div className=
-                {(!editStatus)?"checkbox w-6 h-6 rounded-md border-neutral-200 border-2 cursor-pointer":
-                    "checkbox w-6 h-6 rounded-md border-neutral-200 border-2 cursor-pointer bg-black"
-                } 
-                onClick={() => seteditStatus(!editStatus)} >
-                    <input type="checkbox" name="completed" className='hidden' />
+                <div onClick={() => seteditStatus(!editStatus)}>
+                    <Checkbox isChecked={editStatus}  />
                 </div>
                 <p className="capitalize font-medium ml-4">
                     {
