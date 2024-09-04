@@ -13,20 +13,19 @@
     - [x]: Bug input update
 
 ## Features - [Priority: 5]
-    - [ ]: Add todolist etc in a new feature folder
+    - [x]: Add todolist etc in a new feature folder
 
 ## Filter - [Priority: 5]
     - [x]: Checkbox component
     - [x]: create reducer Filter
     - [x]: create context
     - [x]: bug filter state reset
-  
-## Ui modal - [Priority: 5]
-    - [ ]: basic Modal
 
 ## Create a list - [Priority: 5]
     - [x]: component List
     - [x]: component ListItem
+    - [x]: modal
+        - [ ]: Modal ui adjust
       - [ ]: Function count ListItem
       - [ ]: Change color component
         - [ ]: list of default color
