@@ -1,4 +1,5 @@
-import { Todo } from "../../interfaces/interfaces";
+import { Todo } from "@/features/todoListReducer/features/todos/interfaces/interfaces";
+
 
 type State = { 
     todos: Todo[],

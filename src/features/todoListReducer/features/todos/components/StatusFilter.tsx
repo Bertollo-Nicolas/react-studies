@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useTodos } from '../../hooks/useTodos';
+import { useTodos } from '../hooks/useTodos';
+
 
 type FilterStatus = 'all' | 'completed' | 'active';
 

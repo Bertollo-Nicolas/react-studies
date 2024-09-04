@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { TaskPanelState } from '../../interfaces/interfaces';
+import { TaskPanelState } from '../interfaces/interfaces';
 import Todo from './Todo';
-import { Button } from '../ui/button/Button';
-import ButtonContentCreate from '../ui/button/ButtonContentCreate';
-import { useTodos } from '../../hooks/useTodos';
+import { useTodos } from '../hooks/useTodos';
+import ButtonContentCreate from '@/features/todoListReducer/components/ui/button/ButtonContentCreate';
+import { Button } from '@/features/todoListReducer/components/ui/button/Button';
 
 
 const TodoList: React.FC = () => {

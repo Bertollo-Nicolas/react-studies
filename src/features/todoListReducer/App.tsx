@@ -5,9 +5,9 @@ import Header from '@/components/exercices/ui/Header';
 import { useReducerExercice1 } from '@/lib/constant';
 import FakeBrowserHader from '@/components/exercices/ui/FakeBrowserHeader';
 import DashboardLayout from './components/layout/Dashboard-layout';
-import TodoList from './components/dashboard/TodoList';
+import TodoList from './features/todos/components/TodoList';
 import AppProvider from './provider';
-import CategoryList from './components/dashboard/CategoryList';
+import CategoryList from './features/categories/components/CategoryList';
 
 export const theme = 'useReducer()';
 

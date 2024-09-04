@@ -1,5 +1,5 @@
 import React from 'react';
-import TodosProvider from './stores/contexts/TodosContext';
+import TodosProvider from './features/todos/stores/contexts/TodosContext';
 
 
 const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useReducer } from 'react';
-import { Todo } from '../../interfaces/interfaces';
 import { Action, todosReducer } from '../reducers/todosReducer';
 import { initializeTodos } from '../../utils/storageUtils';
+import { Todo } from '@/features/todoListReducer/features/todos/interfaces/interfaces';
 
 type State = { todos: Todo[], isFiltered: boolean, filteredTodos: Todo[] };
 type TodosContextType = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import GreetinMessage from '../ui/GreetingMessage';
-import StatusFilter from '../dashboard/StatusFilter';
+import StatusFilter from '../../features/todos/components/StatusFilter';
 
 const DashboardLayout: React.FC = () => {
 

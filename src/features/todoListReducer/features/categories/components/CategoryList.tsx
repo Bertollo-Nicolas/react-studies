@@ -1,13 +1,9 @@
 import React from 'react';
 import Category from './Category';
-import { Button } from '../ui/button/Button';
-import ButtonContentCreate from '../ui/button/ButtonContentCreate';
+import { Button } from '@/features/todoListReducer/components/ui/button/Button';
+import ButtonContentCreate from '@/features/todoListReducer/components/ui/button/ButtonContentCreate';
 
-interface CategoryListProps {
-    // Déclare ici les props du composant si nécessaire
-}
-
-const CategoryList: React.FC<CategoryListProps> = (props) => {
+const CategoryList: React.FC = () => {
     
     return (
         <div className='category w-2/5 h-full bg-white rounded-lg relative p-5'>

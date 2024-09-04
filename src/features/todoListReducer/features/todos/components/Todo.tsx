@@ -1,6 +1,7 @@
+import { Button } from '@/features/todoListReducer/components/ui/button/Button';
+import Checkbox from '@/features/todoListReducer/components/ui/checkbox/Checkbox';
 import React, { useEffect, useState } from 'react';
-import { Button } from '../ui/button/Button';
-import Checkbox from '../ui/checkbox/Checkbox';
+
 
 interface TodoProps {
     id: string,
