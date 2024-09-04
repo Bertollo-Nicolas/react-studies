@@ -16,7 +16,7 @@ const TodoList: React.FC = () => {
 
     const handleAddTodo = () => {
         if (todo.trim()) {
-            dispatch({ type: 'ADD_TODO', payload: todo });
+            dispatch({ type: 'ADD_TODO', payload: {title: todo, category: 'Home'} });
             setTodo('');
         }
     }

@@ -1,7 +1,8 @@
 export interface Todo {
     id: string,
     title: string,
-    status: boolean
+    status: boolean,
+    category: string
 }
 
 export interface TaskPanelState {

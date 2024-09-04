@@ -6,7 +6,7 @@ type State = {
     isFiltered: boolean 
 }
 export type Action = 
-    | { type: 'ADD_TODO'; payload: string}
+    | { type: 'ADD_TODO'; payload: {title: string, category: string}}
     | { type: 'UPDATE_TODO'; payload: { id: string, title: string, status: boolean } }
     | { type: 'DELETE_TODO'; payload: string }
     | { type: 'INIT_TODOS'; payload: State  }
@@ -22,8 +22,9 @@ export const todosReducer = (state: State, action: Action): State => {
                     ...state.todos,
                     {
                         id: Date.now().toString(),
-                        title: action.payload,
-                        status: false
+                        title: action.payload.title,
+                        status: false,
+                        category: action.payload.category
                     }
                 ]
             };

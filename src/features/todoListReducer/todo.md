@@ -1,4 +1,4 @@
-## Global component & bug - [Priority: 5]
+## Global component & bug - [Priority: 2]
     - [x]: btn component
       - [x]: style create new things => + text ?shortcut
       - [x]: basic btn clickable => blue and light blue + text center
@@ -12,15 +12,21 @@
     - [x]: click unsave / change updateTodoToggle state
     - [x]: Bug input update
 
+## Features - [Priority: 5]
+    - [ ]: Add todolist etc in a new feature folder
+
 ## Filter - [Priority: 5]
     - [x]: Checkbox component
     - [x]: create reducer Filter
     - [x]: create context
     - [x]: bug filter state reset
   
-## Create a list - [Priority: 4]
-    - [ ]: component List
-    - [ ]: component ListItem
+## Ui modal - [Priority: 5]
+    - [ ]: basic Modal
+
+## Create a list - [Priority: 5]
+    - [x]: component List
+    - [x]: component ListItem
       - [ ]: Function count ListItem
       - [ ]: Change color component
         - [ ]: list of default color
