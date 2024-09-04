@@ -1,37 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../ui/button/Button';
+import Checkbox from '../ui/checkbox/Checkbox';
 
 interface TodoProps {
     id: string,
     title: string,
-    editTitle: string
-    editMode: boolean,
-    setEditMode: (editMode: boolean) => void
-    setEditTitle: (title: string) => void,
-    handleSave: (id: string, title: string) => void,
+    handleSave: (id: string, title: string, status: boolean) => void,
     handleDelete: (id: string) => void,
-    handleEditTitle: (title: string) => void
+    status: boolean
 }
 
-const Todo: React.FC<TodoProps> = ({ id, title, handleSave, handleDelete, setEditMode, editMode }) => {
+const Todo: React.FC<TodoProps> = ({ id, title, handleSave, handleDelete, status }) => {
 
     const [editTitle, setEditTitle] = useState<string>('')
+    const [editMode, setEditMode] = useState(false);
+    const [editStatus, seteditStatus] = useState(status);
     
     const handleEditTitle = ( title: string ) => {
         setEditMode(!editMode)
         setEditTitle(title)
     }
 
+    useEffect(() => {
+        handleSave(id, title, editStatus)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [editStatus])
+
     return (
         <div className="todo h-11 bg-white rounded-lg flex items-center justify-between p-4 mb-2">
-            <div className="todo-left flex">
-                <div className="checkbox w-6 h-6 rounded-md border-neutral-200 border-2 cursor-pointer">
-                    <input type="checkbox" name="completed" className='hidden' />
+            <div className="todo-left flex items-center">
+                <div onClick={() => seteditStatus(!editStatus)}>
+                    <Checkbox isChecked={editStatus}  />
                 </div>
                 <p className="capitalize font-medium ml-4">
                     {
                         (editMode) ? 
-                            <input className="update-input" type='text' value={editTitle} onChange={e => setEditTitle(e.target.value)}/>
+                            <input className="update-input border-2 border-neutral-300 px-4 rounded-lg" type='text' value={editTitle} onChange={e => setEditTitle(e.target.value)}/>
                         :
                             title
                     }
@@ -40,7 +44,7 @@ const Todo: React.FC<TodoProps> = ({ id, title, handleSave, handleDelete, setEdi
             <div className="flex">
                 {
                     (editMode) ?
-                        <Button onClick={() => handleSave(id, editTitle)} className='h-6 px-4'><span>save</span></Button>
+                        <Button onClick={() => {handleSave(id, editTitle, editStatus); setEditMode(!editMode);}} className='h-6 px-4'><span>save</span></Button>
                     :
                         <Button onClick={() => handleEditTitle(title)} className='h-6 px-4'><span>Update</span></Button>
                 }

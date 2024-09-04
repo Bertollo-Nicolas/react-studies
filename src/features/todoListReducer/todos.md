@@ -1,17 +1,22 @@
-## Global component - [Priority: 5]
+## Global component & bug - [Priority: 5]
     - [x]: btn component
       - [x]: style create new things => + text ?shortcut
       - [x]: basic btn clickable => blue and light blue + text center
+    - [ ]: checkbox Onchange
+    - [ ]: scroll multi todo
+    - [ ]: hide scroll-bar + smooth scroll
 
 ## todo - [Priority: 5]
     - [x]: style btn
       - [x]: hover btn
-    - [ ]: click unsave / change updateTodoToggle state
-    - [ ]: Bug input update
+    - [x]: click unsave / change updateTodoToggle state
+    - [x]: Bug input update
 
 ## Filter - [Priority: 5]
-    - [ ]: create reducer Filter
-    - [ ]: create context filter
+    - [x]: Checkbox component
+    - [x]: create reducer Filter
+    - [x]: create context
+    - [x]: bug filter state reset
   
 ## Create a list - [Priority: 4]
     - [ ]: component List
@@ -27,6 +32,7 @@
       - [ ]: create / update / delete
 
 ## Add a todo - [Priority: 3]
+    - [ ]: Export from a component
     - [ ]: styles btn 
       - [ ]: hover btn 
     - [ ]: modal / form new todo / style
