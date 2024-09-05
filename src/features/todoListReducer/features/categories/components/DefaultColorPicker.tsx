@@ -11,7 +11,7 @@ const DefaultColorPicker: React.FC<DefaultColorProps> = ({setPickedColor}) => {
         <div className="grid grid-cols-8 gap-3">
              {
                 colors.map((color, index) => 
-                    <span key={index} className={`default-color bg-white w-7 h-7 border-2 cursor-pointer ${color.borderClassName} rounded-lg ${color.hoverBgClassName} transition-all duration-300`} onClick={() => setPickedColor(color.hexCode)}></span>
+                    <span key={index} className={`default-color bg-white w-7 h-7 border-2 cursor-pointer ${color.borderClassName} rounded-lg ${color.hoverBgClassName} transition-all duration-300 animate-scale-up`} onClick={() => setPickedColor(color.hexCode)}></span>
                 )
              }       
             

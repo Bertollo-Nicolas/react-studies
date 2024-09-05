@@ -70,11 +70,16 @@ module.exports = {
           from: {transform: "rotate(0deg)"},
           to: {transform: "rotate(180deg)"}
         },
+        "scale-up":{
+          from: {transform: "scale(0)"},
+          to: {transform: "scale(1)"}
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-360": "spin-360 0.8s linear",
+        "scale-up": "scale-up 1s linear",
       },
     },
   },

@@ -93,7 +93,31 @@
 // Overide emoji-picker-react css 
 .epr-main {
     border: none;
+    margin-top: 0;
+    padding-top: 0;
 }
 .epr_-6npj90 {
     --epr-emoji-size: 12px
+}
+
+.epr_-8ygbw8 {
+    padding-top: 0 !important;
+}
+
+.epr-emoji-category-content{
+    margin: 0 !important;
+}
+
+.epr-emoji-category-label{
+    padding: 5px !important;
+}
+
+.epr-category-nav{
+    padding: 0px !important;
+}
+
+.epr-header{
+    div{
+        padding: 0 0px 5px 0!important;
+    }
 }

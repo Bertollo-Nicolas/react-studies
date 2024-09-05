@@ -33,7 +33,12 @@
       - [x]: add emoji list component
         - [x]: Last used
         - [x]: Default list emojis
-          - [ ]: Add select emoji to input
+          - [x]: Add select emoji to input
+    - [ ]: bug button emoji / color 
+      - [ ]: add emoji smiley in button emoji
+    - [ ]: delete button send in custom color
+    - [ ]: corret spacing : Custom Color header
+    - [ ]: add btn save list
     - [ ]: create reducer list
       - [ ]: create / update / delete
 
@@ -52,5 +57,5 @@
     - [ ]: Date formater
 
 ## Animation - [Priority: 1]
-    - [ ]: Checkbox
+    - [x]: Checkbox
       - [ ]: scratch title
