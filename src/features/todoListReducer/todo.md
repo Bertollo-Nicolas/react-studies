@@ -25,14 +25,15 @@
     - [x]: component List
     - [x]: component ListItem
     - [x]: modal
-        - [ ]: Modal ui adjust
+        - [x]: Modal ui adjust
       - [ ]: Function count ListItem
-      - [ ]: Change color component
-        - [ ]: list of default color
-        - [ ]: custom color with hexa-color
-      - [ ]: add emoji list component
-        - [ ]: Last used
-        - [ ]: Default list emojis
+      - [x]: Change color component
+        - [x]: list of default color
+        - [x]: custom color with hexa-color
+      - [x]: add emoji list component
+        - [x]: Last used
+        - [x]: Default list emojis
+          - [ ]: Add select emoji to input
     - [ ]: create reducer list
       - [ ]: create / update / delete
 

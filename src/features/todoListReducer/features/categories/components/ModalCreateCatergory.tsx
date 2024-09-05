@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DefaultColorPicker from './DefaultColorPicker';
 import CustomColorPicker from './CustomColorPicker';
+import EmojiPicker, { EmojiStyle } from 'emoji-picker-react';
 
 const ModalCreateCategory: React.FC = () => {
 
@@ -33,10 +34,15 @@ const ModalCreateCategory: React.FC = () => {
                     <span className='ml-2'>Color</span>
                 </button>
             </div>
-            <div className="list-options-color">
-                <DefaultColorPicker setPickedColor={setPickedColor} />
-                <CustomColorPicker setPickedColor={setPickedColor} />
-            </div>
+            {
+                (showEmojiOptions) ?
+                    <EmojiPicker width="100%" height="400px" style={{ border: "none", '--epr-emoji-size': '25px' } as React.CSSProperties} emojiStyle={EmojiStyle.NATIVE} previewConfig={{ showPreview: false }}/> :
+                    <div className="list-options-color">
+                        <DefaultColorPicker setPickedColor={setPickedColor} />
+                        <CustomColorPicker setPickedColor={setPickedColor} />
+                    </div>
+            }
+            
         </div>
     );
 };
