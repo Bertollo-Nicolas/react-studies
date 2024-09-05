@@ -89,3 +89,11 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+// Overide emoji-picker-react css 
+.epr-main {
+    border: none;
+}
+.epr_-6npj90 {
+    --epr-emoji-size: 12px
+}
