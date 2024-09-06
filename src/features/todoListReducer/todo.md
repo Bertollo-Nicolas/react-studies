@@ -41,6 +41,7 @@
     - [ ]: add btn save list
     - [ ]: create reducer list
       - [ ]: create / update / delete
+    - [ ]: Export compoment
 
 ## Add a todo - [Priority: 3]
     - [ ]: Export from a component

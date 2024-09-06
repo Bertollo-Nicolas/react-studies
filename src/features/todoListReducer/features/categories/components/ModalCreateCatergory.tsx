@@ -11,8 +11,8 @@ const ModalCreateCategory: React.FC = () => {
     const [pickedEmoji, setPickedEmoji] = useState("1f60a")
 
     return (
-        <div className="modal-category w-full bg-white drop-shadow-lg p-2 rounded-md mb-3 border border-neutral-200">
-            <div className="input relative h-10 mb-2">
+        <div className="modal-category w-full bg-white drop-shadow-lg p-2 rounded-md mb-3 border border-neutral-200 ">
+            <div className="input relative h-10 mb-2 ">
                 <input type="text" placeholder='Create new List' className='bg-neutral-100 rounded-md  py-1 pl-11 pr-3 capitalize w-full mb-3 h-10' />
                 {
                     (showEmojiOptions) ?
@@ -24,7 +24,7 @@ const ModalCreateCategory: React.FC = () => {
                 }
                 
             </div>
-            <div className="list-options flex mb-6 justify-between">
+            <div className="list-options flex mb-6 justify-between ">
                 <button 
                     onClick={() => [setShowColorOptions(!showColorOptions), setShowEmojiOptions(!showEmojiOptions)]}
                     className={'bg-neutral-100 rounded-md w-[48%] hover:bg-neutral-950 hover:text-white transition-all duration-500 py-1 text-left px-2 flex items-center ' + (showEmojiOptions ? 'bg-neutral-950 text-white' : '')}
@@ -42,16 +42,23 @@ const ModalCreateCategory: React.FC = () => {
             </div>
             {
                 (showEmojiOptions) ?
-                    <div>
-<div className="header flex justify-between items-center mt-5 mb-5 text-center">
-                        <span className='w-[30%] h-px bg-neutral-300' ></span>
-                        <p>Select Emoji</p>
-                        <span className='w-[30%] h-px bg-neutral-300' ></span>
-                    </div>
-                    <EmojiPicker width="100%" height="400px" style={{ border: "none", '--epr-emoji-size': '25px' } as React.CSSProperties} emojiStyle={EmojiStyle.NATIVE} previewConfig={{ showPreview: false }} onEmojiClick={e => setPickedEmoji(e.unified)} />
+                    <div className='transition-all duration-500'>
+                        <div className="header flex justify-between items-center mt-5 mb-5 text-center">
+                            <span className='w-[30%] h-px bg-neutral-300' ></span>
+                            <p>Select Emoji</p>
+                            <span className='w-[30%] h-px bg-neutral-300' ></span>
+                        </div>
+                        <EmojiPicker 
+                            width="100%" 
+                            height="400px" 
+                            style={{ border: "none", '--epr-emoji-size': '25px' } as React.CSSProperties} 
+                            emojiStyle={EmojiStyle.NATIVE}
+                            previewConfig={{ showPreview: false }} 
+                            onEmojiClick={e => setPickedEmoji(e.unified)} lazyLoadEmojis={true} 
+                        />
                     </div>
                      :
-                    <div className="list-options-color">
+                    <div className="list-options-color transition-all duration-500">
                         <DefaultColorPicker setPickedColor={setPickedColor} />
                         <CustomColorPicker setPickedColor={setPickedColor} />
                     </div>
