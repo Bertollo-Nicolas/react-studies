@@ -44,7 +44,7 @@ export const todosReducer = (state: State, action: Action): State => {
         case 'INIT_TODOS':
             return {
                 ...state,
-                todos: action.payload.todos,
+                todos: Array.isArray(action.payload.todos) ? action.payload.todos : [],
                 filteredTodos: action.payload.todos,
                 isFiltered: false,
             };

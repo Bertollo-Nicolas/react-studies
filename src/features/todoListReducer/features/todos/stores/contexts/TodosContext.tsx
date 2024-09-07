@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useReducer } from 'react';
 import { Action, todosReducer } from '../reducers/todosReducer';
-import { initializeTodos } from '../../utils/storageUtils';
 import { Todo } from '@/features/todoListReducer/features/todos/interfaces/interfaces';
+import { initializeStorage } from '@/features/todoListReducer/utils/storageUtils';
 
 type State = { todos: Todo[], isFiltered: boolean, filteredTodos: Todo[] };
 type TodosContextType = {
@@ -12,7 +12,7 @@ type TodosContextType = {
 export const TodosContext = createContext<TodosContextType | undefined>(undefined);
 
 const TodosProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [state, dispatch] = useReducer(todosReducer, initializeTodos());
+    const [state, dispatch] = useReducer(todosReducer, initializeStorage('todos'));
 
     useEffect(() => {
         try {
