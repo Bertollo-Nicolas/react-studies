@@ -1,19 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DefaultColorPicker from './DefaultColorPicker';
 import CustomColorPicker from './CustomColorPicker';
 import EmojiPicker, { Emoji, EmojiStyle } from 'emoji-picker-react';
+import { IconMoodSmile } from '@tabler/icons-react';
+import { Button } from '@/features/todoListReducer/components/ui/button/Button';
+import { useCategories } from '../hooks/useCategories';
 
 const ModalCreateCategory: React.FC = () => {
 
+    const { dispatch } = useCategories();
+    const [category, setCategory] = useState("")
     const [showColorOptions, setShowColorOptions] = useState(true)
     const [showEmojiOptions, setShowEmojiOptions] = useState(false)
-    const [pickedColor, setPickedColor] = useState("#D946EF")
-    const [pickedEmoji, setPickedEmoji] = useState("1f60a")
+    const [pickedColor, setPickedColor] = useState("")
+    const [pickedEmoji, setPickedEmoji] = useState("")
+
+    const handleAddCat = () => {
+        if (category.trim()) {
+            dispatch({ type: 'ADD_CAT', payload: {title: category, icon: pickedEmoji, color: pickedColor} });
+            setCategory('');
+        }
+    }
+
+    useEffect(() => {
+        setPickedEmoji("")
+    }, [pickedColor])
+    useEffect(() => {
+        setPickedColor("")
+    }, [pickedEmoji])
+
 
     return (
         <div className="modal-category w-full bg-white drop-shadow-lg p-2 rounded-md mb-3 border border-neutral-200 ">
             <div className="input relative h-10 mb-2 ">
-                <input type="text" placeholder='Create new List' className='bg-neutral-100 rounded-md  py-1 pl-11 pr-3 capitalize w-full mb-3 h-10' />
+                <input type="text" value={category} onChange={e => setCategory(e.target.value)} placeholder='Create new List' className='bg-neutral-100 rounded-md  py-1 pl-11 pr-3 capitalize w-full mb-3 h-10' />
                 {
                     (showEmojiOptions) ?
                     <div className="absolute left-2 bottom-1/2 transform translate-y-1/2">
@@ -26,14 +46,14 @@ const ModalCreateCategory: React.FC = () => {
             </div>
             <div className="list-options flex mb-6 justify-between ">
                 <button 
-                    onClick={() => [setShowColorOptions(!showColorOptions), setShowEmojiOptions(!showEmojiOptions)]}
+                    onClick={() => [setShowColorOptions(false), setShowEmojiOptions(true)]}
                     className={'bg-neutral-100 rounded-md w-[48%] hover:bg-neutral-950 hover:text-white transition-all duration-500 py-1 text-left px-2 flex items-center ' + (showEmojiOptions ? 'bg-neutral-950 text-white' : '')}
                 >
-                    <span>&#x263A;</span>
+                    <span><IconMoodSmile /></span>
                     <span className='ml-2'>Emoji</span>
                 </button>
                 <button 
-                    onClick={() => [setShowColorOptions(!showColorOptions), setShowEmojiOptions(!showEmojiOptions)]} 
+                    onClick={() => [setShowColorOptions(true), setShowEmojiOptions(false)]} 
                     className={'bg-neutral-100 rounded-md w-[48%] hover:bg-neutral-950 hover:text-white transition-all duration-500 py-1 text-left px-2 flex items-center ' + (showColorOptions ? 'bg-neutral-950 text-white' : '')}
                 >
                     <span className={"w-4 h-4 border-2 rounded-md right-0 group-hover:border-white "+ (showColorOptions ? "border-white": "border-neutral-950")}></span>
@@ -63,7 +83,9 @@ const ModalCreateCategory: React.FC = () => {
                         <CustomColorPicker setPickedColor={setPickedColor} />
                     </div>
             }
-            
+            <Button className='h-8 mt-5' onClick={handleAddCat}>
+                <span>Save</span>
+            </Button>
         </div>
     );
 };

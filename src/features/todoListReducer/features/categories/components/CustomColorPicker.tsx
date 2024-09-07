@@ -12,9 +12,9 @@ const CustomColorPicker: React.FC<CustomColorProps> = ({setPickedColor}) => {
     return (
         <div className="list-options-custom-color">
             <div className="header flex justify-between items-center mt-5 mb-5">
-                <span className='w-1/3 h-px bg-neutral-300' ></span>
+            <span className='w-[30%] h-px bg-neutral-300' ></span>
                 <p>Custom Color</p>
-                <span className='w-1/3 h-px bg-neutral-300' ></span>
+                <span className='w-[30%] h-px bg-neutral-300' ></span>
             </div>
             <div className="input h-10 flex justify-between">
                 <div className="input-content relative w-[85%]">

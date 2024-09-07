@@ -34,14 +34,15 @@
         - [x]: Last used
         - [x]: Default list emojis
           - [x]: Add select emoji to input
-    - [ ]: bug button emoji / color 
-      - [ ]: add emoji smiley in button emoji
-    - [ ]: delete button send in custom color
+    - [x]: bug button emoji / color 
+      - [x]: add emoji smiley in button emoji
+    - [x]: delete button send in custom color
     - [ ]: corret spacing : Custom Color header
     - [ ]: add btn save list
     - [ ]: create reducer list
       - [ ]: create / update / delete
     - [ ]: Export compoment
+    - [ ]: Correct modal name Catergory*
 
 ## Add a todo - [Priority: 3]
     - [ ]: Export from a component
