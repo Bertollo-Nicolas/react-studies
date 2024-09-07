@@ -20,7 +20,7 @@ const App: React.FC = () => {
                 <div className="content-exercice pt-8 roboto-medium w-5/6 mx-auto mb-10 drop-shadow-md">
                     <FakeBrowserHader />
                     <div className="app-todo relative bg-gray-100 p-5 text-neutral-950 flex" style={{height: "700px"}}>
-                        <CategoryList />
+                    <CategoryList />
                         <div className='w-full ml-12'>
                             <DashboardLayout />
                             <TodoList />
