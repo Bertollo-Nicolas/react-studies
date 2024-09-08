@@ -2,7 +2,7 @@
     - [x]: btn component
       - [x]: style create new things => + text ?shortcut
       - [x]: basic btn clickable => blue and light blue + text center
-    - [ ]: checkbox Onchange
+    - [x]: checkbox Onchange
     - [ ]: scroll multi todo
     - [ ]: hide scroll-bar + smooth scroll
 
@@ -37,12 +37,12 @@
     - [x]: bug button emoji / color 
       - [x]: add emoji smiley in button emoji
     - [x]: delete button send in custom color
-    - [ ]: corret spacing : Custom Color header
-    - [ ]: add btn save list
-    - [ ]: create reducer list
+    - [x]: corret spacing : Custom Color header
+    - [x]: add btn save list
+    - [x]: create reducer list
       - [ ]: create / update / delete
     - [ ]: Export compoment
-    - [ ]: Correct modal name Catergory*
+    - [x]: Correct modal name Catergory*
 
 ## Add a todo - [Priority: 3]
     - [ ]: Export from a component

@@ -1,4 +1,4 @@
-import { Emoji } from 'emoji-picker-react';
+import { Emoji, EmojiStyle } from 'emoji-picker-react';
 import React from 'react';
 
 interface CategoryProps {
@@ -20,7 +20,9 @@ const Category: React.FC<CategoryProps> = ({label, icon, color, count, selected}
                     color?
                         <span className="w-6 h-6 border-2 rounded-lg" style={{borderColor: color}}></span>
                     :
-                    <Emoji unified={icon || ""} />
+                    <div className="emoji">
+                        <Emoji unified={icon || ""} emojiStyle={EmojiStyle.NATIVE} size={22} />
+                    </div>
                 }
                 <div className="title pl-2 text-md capitalize">{label}</div>
             </div>
