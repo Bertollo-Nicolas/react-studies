@@ -2,6 +2,7 @@ import React from 'react';
 import "./app.scss"
 import Exercice from './components/Exercice';
 import BgBlockView from '@/components/ui/BgBlockView';
+import Card from './components/Card';
 
 const ModalReducer: React.FC = () => {
     
@@ -9,13 +10,26 @@ const ModalReducer: React.FC = () => {
         <>
           <div className='studie-content mx-auto max-w-5xl py-10'>
             <Exercice />
-            <div className="studie-code mt-20 mb-20">
+            <div className="studie-code mt-10">
                 <section className="mt-4 -mb-3">
                   <div className="relative rounded-xl overflow-hidden bg-slate-950/50 border border-slate-700">
                   <BgBlockView col={24} row={8} />
                     <div className="relative rounded-xl overflow-auto p-8">
-                      <div className="text-white text-sm font-bold bg-stripes-indigo rounded-lg bg-slate-900">
-                        <div className="p-4 w-2/5 h-[100px] rounded-lg flex items-center justify-center bg-indigo-500 shadow-lg">01</div>
+                      <div className="text-white text-sm font-bold bg-stripes-indigo rounded-lg bg-slate-900 p-4">
+                        <div className="options flex justify-end items-center h-14 bg-indigo-900 mb-6 rounded-xl px-5 gap-3">
+                          <div className="btn-card-list bg-indigo-950 px-4 py-1 rounded-xl cursor-pointer">Card list</div>
+                          <div className="btn-card-list bg-indigo-950 px-4 py-1 rounded-xl cursor-pointer">Card Chart</div>
+                          <div className="btn-card-list bg-indigo-950 px-4 py-1 rounded-xl cursor-pointer">Card Table</div>
+                        </div>
+                        <div className="grid grid-cols-3 gap-4 h-auto auto-rows-auto">
+                          <Card title='Fake card' width='col-span-1 row-span-4'>
+                            <div className="mt-5 flex flex-col gap-5">
+                              <div className="w-full h-10 bg-indigo-500 rounded-full"></div>
+                              <div className="w-full h-10 bg-indigo-500 rounded-full"></div>
+                              <div className="w-full h-10 bg-indigo-500 rounded-full"></div>
+                            </div>
+                          </Card>
+                        </div>
                       </div>
                     </div>
                   </div>
