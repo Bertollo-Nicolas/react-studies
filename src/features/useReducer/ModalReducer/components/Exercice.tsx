@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconClipboardText, IconTarget } from '@tabler/icons-react';
+import { IconClipboardText, IconTargetArrow } from '@tabler/icons-react';
 
 const Exercice: React.FC = () => {
     return (<>
@@ -7,13 +7,13 @@ const Exercice: React.FC = () => {
             <h3 className='mb-2 text-sm leading-6 font-semibold text-sky-400 capitalize'>Hooks {">"} UseReducer</h3>
             <h1 className='inline-block text-2xl sm:text-3xl font-bold tracking-tight text-slate-200'>Toggling Multiple UI Elements</h1>
             <section className='bg-emerald-900/50 p-5 rounded-xl mt-10'>
-                <h2 className='flex items-center text-emerald-500 font-bold text-lg'><IconTarget className='mr-2' /> Objective</h2>
+                <h2 className='flex items-center text-emerald-500 font-bold text-xl'><IconTargetArrow className='mr-2' /> Objective</h2>
                 <p className="mt-4 leading-8 text-neutral-100">
-                    Develop a dashboard containing multiple widgets that users can individually show or hide, managed by <span className=" bg-amber-500/30 rounded-sm text-amber-400 px-2 border-b-amber-400 border-b-2">useReducer</span>.
+                    Develop a dashboard containing multiple widgets that users can individually show or hide, managed by <span title="useEffect is a React Hook that lets you synchronize a component with an external system." className=" bg-amber-500/30 rounded-sm text-amber-400 px-2 border-b-amber-400 border-b-2">useReducer</span>.
                 </p>
             </section>
             <section className='bg-indigo-300/15 p-5 rounded-xl mt-10'>
-                <h2 className='flex items-center text-indigo-400 font-bold text-lg'><IconClipboardText className='mr-2' /> Detailed Description</h2>
+                <h2 className='flex items-center text-indigo-400 font-bold text-xl'><IconClipboardText className='mr-2' /> Detailed Description</h2>
                 <ul className="list-inside list-none space-y-3 mt-6">
                     <li>
                         <span className="font-semibold text-slate-300 mr-1">Dashboard Layout:</span> Design a dashboard interface with various widgets such as charts, tables, forms, and tooltips.
