@@ -1,0 +1,10 @@
+body{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.bg-stripes-indigo {
+  background-image: linear-gradient(135deg, #6365f156 10%, #0000 0, #0000 50%, #6365f156 0, #6365f156 60%, #0000 0, #0000);
+  background-size: 9px 9px;
+}

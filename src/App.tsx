@@ -1,30 +1,34 @@
-import { Suspense, lazy } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import exercises from './exercises';
 
-function App() {
+import { features } from './features';
+import { MainLayout } from './components/layouts/MainLayout';
+
+const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        {exercises.map((exercise, index) => {
-          const Component = lazy(exercise.component);
-          return (
+        <Route element={<MainLayout />}>
+          {features.map((feature) => (
             <Route
-              key={index}
-              path={`/${exercise.path}`}
-              element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <Component />
-                </Suspense>
-              }
+              key={feature.path}
+              path={feature.path}
+              element={<feature.component />}
             />
-          );
-        })}
+          ))}
+          <Route path="/" element={<Home />} />
+        </Route>
       </Routes>
     </Router>
   );
-}
+};
+
+const Home: React.FC = () => (
+  <div>
+    <h1 className="text-3xl font-bold mb-4">useReducer Studies</h1>
+    <p>Select a feature from the sidebar to view the study.</p>
+    
+  </div>
+);
 
 export default App;
