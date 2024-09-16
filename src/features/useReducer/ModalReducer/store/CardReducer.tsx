@@ -1,12 +1,12 @@
-type CardType = 'list' | 'chart' | 'table' | null;
+export type CardType = 'list' | 'chart' | 'table' | null;
 
-interface CardData {
+export interface CardData {
     id: string,
     isOpen: boolean,
     type: CardType,
 }
 
-interface CardState {
+export interface CardState {
     cards: CardData[];
     activeCardId: string | null;
 }
@@ -14,6 +14,7 @@ interface CardState {
 type CardAction =
     | { type: 'OPEN_CARD';  payload: Omit<CardData, 'isOpen'> }
     | { type: 'CLOSE_CARD'; payload: { id: string }  };
+  
 
 export const CardReducer = (state: CardState, action: CardAction): CardState => {
     switch (action.type) {
